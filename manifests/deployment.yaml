@@ -13,11 +13,11 @@ spec:
   template:
     metadata:
       labels:
-        app: express
+        app: express-app
     spec:
       containers:
       - name: express-cont
-        image: express:0.0.1
+        image: ghcr.io/adamroddick/express:latest
         ports:
         - containerPort: 80
         resources:
