@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: express-cont
-        image: ghcr.io/adamroddick/express:latest
+        image: ghcr.io/adamroddick/express:master
         ports:
         - containerPort: 80
         resources:
