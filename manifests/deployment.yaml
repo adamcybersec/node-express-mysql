@@ -19,7 +19,7 @@ spec:
       - name: express-cont
         image: ghcr.io/adamroddick/node-express-mysql:master
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         resources:
           requests:
             memory: 64Mi
