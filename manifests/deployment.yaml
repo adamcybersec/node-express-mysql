@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: express-app
-  namespace: express-app-ns
+  namespace: express-ns
   labels:
     app: express
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: express-cont
-        image: ghcr.io/adamroddick/express:master
+        image: ghcr.io/adamroddick/node-express-mysql:master
         ports:
         - containerPort: 80
         resources:
