@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: express-app
+  name: express
   labels:
     app: express
 spec:
@@ -15,7 +15,7 @@ spec:
         app: express
     spec:
       containers:
-      - name: express-cont
+      - name: express
         #image: ghcr.io/adamroddick/node-express-mysql:master
         image: nginx:alpine
         ports:

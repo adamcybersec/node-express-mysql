@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: express
+  annotations:
+    # cert-manager.io/cluster-issuer: letsencrypt
+    nginx.org/redirect-to-https: true
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: express.adamcybersec.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: express
+            port:
+              number: 80
+  # tls:
+  #   - hosts:
+  #     - express.adamcybersec.com
+  #     secretName: express-cert
