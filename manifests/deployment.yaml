@@ -8,22 +8,24 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: express-app
+      app: express
   replicas: 1
   template:
     metadata:
       labels:
-        app: express-app
+        app: express
     spec:
       containers:
       - name: express-cont
-        image: ghcr.io/adamroddick/node-express-mysql:master
+        #image: ghcr.io/adamroddick/node-express-mysql:master
+        image: nginx:alpine
         ports:
-        - containerPort: 3000
+          - containerPort: 80
+            protocol: TCP
         resources:
           requests:
             memory: 64Mi
             cpu: 100m
           limits:
-            memory: 512Mi
-            cpu: 500m
+            memory: 128Mi
+            cpu: 200m
